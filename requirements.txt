@@ -1,0 +1,2 @@
+filename = 'requirements.txt'  # Замініть 'requirements.txt' на шлях до вашого файлу
+count_words_and_sentences(filename)
