@@ -1,0 +1,24 @@
+def count_words_and_sentences(filename):
+    try:
+        with open(filename, 'r', encoding='utf-8') as file:
+            text = file.read()
+            # Розділити текст на слова за символами-розділювачами
+            words = text.split()
+            num_words = len(words)
+
+            # Розділити текст на речення за символами, що закінчують речення
+            sentences = text.split('.')
+            sentences += text.split('!')
+            sentences += text.split('?')
+            sentences += text.split('...')
+            num_sentences = len(sentences)
+
+            print("Кількість слів у файлі:", num_words)
+            print("Кількість речень у файлі:", num_sentences)
+    except FileNotFoundError:
+        print("Файл не знайдено.")
+    except Exception as e:
+        print("Виникла помилка:", e)
+
+filename = 'sample.txt'  # Замініть 'sample.txt' на шлях до вашого файлу
+count_words_and_sentences(filename)
