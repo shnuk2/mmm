@@ -1,0 +1,25 @@
+import pytest
+
+# Фікстура для підготовки даних для тестування
+@pytest.fixture
+def sample_sentence():
+    return "This is a sample sentence."
+
+# Параметризований тест для різних вхідних даних
+@pytest.mark.parametrize("input_sentence, expected_count", [
+    ("Hello world", 2),
+    ("Python is awesome", 3),
+    ("", 0),
+    ("Python, programming!", 2)
+])
+def test_word_count(input_sentence, expected_count):
+    assert word_count(input_sentence) == expected_count
+
+# Тест з використанням фікстури
+def test_word_count_fixture(sample_sentence):
+    assert word_count(sample_sentence) == 5  # Очікується 5 слів у реченні "This is a sample sentence."
+
+# Тест для некоректного вхідного значення
+def test_word_count_invalid_input():
+    with pytest.raises(AttributeError):
+        word_count(123)
