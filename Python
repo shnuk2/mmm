@@ -20,5 +20,5 @@ def count_words_and_sentences(filename):
     except Exception as e:
         print("Виникла помилка:", e)
 
-filename = 'sample.txt'  # Замініть 'sample.txt' на шлях до вашого файлу
+filename = ' requirements.txt'  # Замініть ' requirements.txt' на шлях до вашого файлу
 count_words_and_sentences(filename)
