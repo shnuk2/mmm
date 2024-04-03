@@ -1,0 +1,6 @@
+ print("Кількість слів у файлі:", num_words)
+            print("Кількість речень у файлі:", num_sentences)
+    except FileNotFoundError:
+        print("Файл не знайдено.")
+    except Exception as e:
+        print("Виникла помилка:", e)
