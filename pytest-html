@@ -1,0 +1,2 @@
+pip install pytest-html
+pytest --html=report.html
