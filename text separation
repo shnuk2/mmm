@@ -1,0 +1,6 @@
+# Розділити текст на речення за символами, що закінчують речення
+            sentences = text.split('.')
+            sentences += text.split('!')
+            sentences += text.split('?')
+            sentences += text.split('...')
+            num_sentences = len(sentences)
